@@ -6,6 +6,17 @@
 super + Return
 	kitty
 
+super + b
+	firefox; \
+	notify-send "firefox will open soon"
+
+super + ctrl + p
+	powermenu.sh; \
+	notify-send "Is working??"
+
+super + shift + l
+	betterlockscreen -l dimblur    
+
 # program launcher
 super + @space
 	dmenu_run
@@ -120,11 +131,9 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# powermenu
-# ctrl + alt + del
-# 	~/.config/scripts/powermenu.sh
+#
+# custom hotkeys
+#
 
-# lockscreen
-super + alt + l
-    betterlockscreen -l dim
-
+super + alt + p
+ 	$HOME/.config/rofi/powermenu/powermenu.sh
