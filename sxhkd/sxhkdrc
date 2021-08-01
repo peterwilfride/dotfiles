@@ -6,13 +6,8 @@
 super + Return
 	kitty
 
-super + b
-	firefox; \
-	notify-send "firefox will open soon"
-
-super + ctrl + p
-	powermenu.sh; \
-	notify-send "Is working??"
+super + shift + p
+	sh ~/.config/rofi/powermenu/powermenu.sh
 
 super + shift + l
 	betterlockscreen -l dimblur    
@@ -66,7 +61,8 @@ super + ctrl + {m,x,y,z}
 #
 
 # focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+#super + {_,shift + }{h,j,k,l}
+super + {_,shift + }{Left,Down,Up,Right}
 	bspc node -{f,s} {west,south,north,east}
 
 # focus the node for the given path jump
@@ -78,7 +74,8 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+#super + bracket{left,right}
+ctrl + {Left,Right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
@@ -134,6 +131,3 @@ super + {Left,Down,Up,Right}
 #
 # custom hotkeys
 #
-
-super + alt + p
- 	$HOME/.config/rofi/powermenu/powermenu.sh
