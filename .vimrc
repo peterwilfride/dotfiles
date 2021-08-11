@@ -8,6 +8,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'gko/vim-coloresque'
 Plug 'chrisbra/colorizer'
 Plug 'lilydjwg/colorizer'
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -17,6 +18,10 @@ set title
 set cursorline
 set encoding=utf-8
 set fileencoding=utf-8
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
 
 map <C-q> :quit<CR>
 map <C-s> :write<CR>
