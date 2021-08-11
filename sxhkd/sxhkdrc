@@ -4,10 +4,10 @@
 
 # terminal emulator
 super + Return
-	kitty
+	kitty -T=kitty
 
-super + shift + p
-	sh ~/.config/rofi/powermenu/powermenu.sh
+ctrl + alt + @space
+	~/.config/rofi/powermenu/powermenu.sh
 
 super + shift + l
 	betterlockscreen -l dimblur    
@@ -131,3 +131,10 @@ super + {Left,Down,Up,Right}
 #
 # custom hotkeys
 #
+
+F7
+    amixer set Master 5%-
+F8
+    amixer set Master 5%+
+F9
+    amixer set Master toggle
