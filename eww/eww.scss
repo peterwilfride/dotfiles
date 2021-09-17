@@ -1,0 +1,149 @@
+* {
+    all: unset;
+}
+
+.profile {
+    background-color: #1C191B;
+    /*border-radius: 10px;*/
+}
+
+.names {
+    font-family: JetBrains Mono;
+
+}
+
+.username {
+    font-style: italic;
+    font-size: 18px;
+    color: #E5E1DE;
+}
+
+.hostname {
+    font-style: italic;
+    font-size: 14px;
+    color: #E5E1DE;
+}
+
+.weather {
+    background-color: #1C191B;
+    /*border-radius: 10px;*/
+}
+
+.user_img {
+	background-image: url("images/user.png");
+    background-size: 60px;
+    min-height: 60px;
+    min-width: 60px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 100%;
+}
+
+.label_temp {
+    color : #A6D1DD;
+    font-size : 20px;
+    font-weight : bold;
+}
+
+.icon_weather {
+    font-size : 40px;
+    padding-top: 10px;
+}
+
+.music_box {
+    background-color: #1C191B;
+    font-family: JetBrains Mono;
+}
+
+.song {
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 10px;
+    //padding-right: 10px;
+}
+
+.artist {
+    font-size: 10px;
+    //padding-right: 20px;
+}
+
+.album {
+    font-size: 11px;
+    //padding-right: 20px;
+}
+
+.time {
+    //padding-right: 20px;
+}
+
+.album_art {
+    background-size: 160px;
+    min-height: 160px;
+    min-width: 160px;
+    //margin: 0px 0px 0px 0px;
+}
+
+.mus_info {
+    background-color: #1C191B;
+    margin: 0px 0px 0px -10px;
+}
+
+.bnt_song {
+    font-size: 30px;
+    //padding-right: 20px;
+}
+
+.btn_prev:hover {
+    background-color: #604293;
+}
+
+.btn_play:hover {
+    background-color: #604293;
+}
+
+.btn_next:hover {
+    background-color: #604293;
+}
+
+.powermenu_box {
+    background-color: #1C191B;
+    font-family: JetBrains Mono;
+    font-size: 50px;
+}
+
+.btn_poweroff:hover {
+    background-color: #604293;
+}
+
+.btn_reboot:hover {
+    background-color: #604293;
+}
+
+.btn_sleep:hover {
+    background-color: #604293;
+}
+
+.btn_logout:hover {
+    background-color: #604293;
+}
+
+.calendar-box, .date {
+    background-color: #1C191B;
+    font-family: JetBrains Mono
+}
+
+.date {
+    font-size: 16px;
+}
+
+.day {
+    padding-top: 10px;
+}
+
+.month {
+    font-weight: bold;
+    color: #604293;
+}
+
+.year {
+    padding-bottom: 10px;
+}

@@ -1,0 +1,11 @@
+whoami ::> username
+hostname ::> hostname
+up -p ::> uptime
+pacman -Q | wc -l ::> number of pkgs installed
+uname -a | awk '{print $3}' ::> kernel
+xdpyinfo | awk '/dimensions/ {print $2}' ::> resolution
+echo $TERM ::> terminal
+echo $XDG_SESSION_DESKTOP ::> show WM
+lscpu | grep Model | awk '{print $3, $4, $7}' ::> CPU
+lspci | grep VGA | awk '{print $5, $6, $7, $8}' ::> GPU
+

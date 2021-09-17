@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	kitty -T=kitty
+	kitty
 
 ctrl + alt + @space
 	~/.config/rofi/powermenu/powermenu.sh
@@ -14,7 +14,7 @@ super + shift + l
 
 # program launcher
 super + @space
-	dmenu_run
+    ~/.config/rofi/launcher/launcher.sh
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -133,8 +133,8 @@ super + {Left,Down,Up,Right}
 #
 
 F7
-    amixer set Master 5%-
+    ~/.local/bin/volume.sh down
 F8
-    amixer set Master 5%+
+    ~/.local/bin/volume.sh up
 F9
-    amixer set Master toggle
+    ~/.local/bin/volume.sh toggle

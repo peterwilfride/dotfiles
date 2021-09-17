@@ -1,0 +1,182 @@
+<eww>
+    <variables>
+        <!-- Put your <script-var> and <var>'s in here -->
+        <!-- profile -->
+        <var name="img">./images/user.png </var>
+        <script-var name="user" interval="5m"> whoami </script-var>
+        <script-var name="hostname" interval="5m"> hostname </script-var>
+
+        <!-- weather -->
+        <script-var name="weathericon" interval="10m"> ~/.config/eww/scripts/weather.sh -icon </script-var>
+        <script-var name="weathertemp" interval="10m"> ~/.config/eww/scripts/weather.sh -temp </script-var>
+        <script-var name="weatherhex" interval="10m"> ~/.config/eww/scripts/weather.sh -hex </script-var>
+
+        <!-- date -->
+        <script-var name="day" interval="1h"> date +%d </script-var>
+        <script-var name="month" interval="1h"> date +%b </script-var>
+        <script-var name="year" interval="1h"> date +%y </script-var>
+        <script-var name="min" interval="10s">date +%M</script-var>
+        <script-var name="hour" interval="25s">date +%I</script-var>
+        <script-var name="ampm" interval="1h">date +%P</script-var>
+
+        <!-- music -->
+        <script-var name="music_status" interval="1ms"> ~/.config/eww/scripts/music.sh -status </script-var>
+        <script-var name="music_isRepeat" interval="1ms"> ~/.config/eww/scripts/music.sh -repeat </script-var>
+        <script-var name="music_song" interval="1s"> ~/.config/eww/scripts/music.sh -song </script-var>
+        <script-var name="music_artist" interval="1s"> ~/.config/eww/scripts/music.sh -artist </script-var>
+        <script-var name="music_album" interval="1s"> ~/.config/eww/scripts/music.sh -album </script-var>
+        <script-var name="music_cover" interval="1s"> ~/.config/eww/scripts/music.sh -cover </script-var>
+        <script-var name="music_current" interval="1s"> ~/.config/eww/scripts/music.sh -time </script-var>
+        <script-var name="music_ctime" interval="1s"> ~/.config/eww/scripts/music.sh -ctime </script-var>
+        <script-var name="music_ttime" interval="1s"> ~/.config/eww/scripts/music.sh -ttime </script-var>
+    </variables>
+
+    <definitions>
+        <!-- Put your <def>'s in here -->
+        <!-- profile -->
+        <def name="sidebar">
+            <box class="profile" orientation="h" space-evenly="false" vexpand="false" hexpand="false">
+                <box class="user_img" halign="left"/>
+                <box class="names" orientation="v" spacing="5" space-evenly="false">
+                    <label class="username" valign="center" wrap="true" limit-width="25" text="{{user}}"/>
+                    <label class="hostname" valign="center" wrap="true" limit-width="25" text="@{{hostname}}"/>
+                </box>
+            </box>
+        </def>
+        <!-- weather -->
+        <def name="myweather"> 
+            <box class="weather" orientation="v" space-evenly="false" vexpand="false" hexpand="false">
+                <label class="icon_weather" valign="top" style="color: {{weatherhex}};" text="{{weathericon}}"/>
+                <label class="label_temp" valign="end" text="{{weathertemp}}°C"/>
+            </box>
+        </def>
+        <!-- music -->
+        <def name="music">
+            <box class="music_box" orientation="h">
+                <box class="album_art" style="background-image: url('{{music_cover}}');"></box>
+                <box class="mus_info" orientation="v" spacing="5" space-evenly="false">
+                    <label valign="center" class="song" limit-width="20" text="{{music_song}}"/>
+                    <label valign="center" class="artist" wrap="true" limit-width="20" text="{{music_artist}}"/>
+                    <label valign="center" class="album" wrap="true" limit-width="20" text="{{music_album}}"/>
+                    <label valign="center" class="time" wrap="true" text="{{music_ctime}}/{{music_ttime}}"/>
+                    <box class="bnt_song" orientation="h" spacing="10" valign="end">
+                        <button class="btn_prev" onclick="~/.config/eww/scripts/music.sh -prev">玲</button>
+                        <button class="btn_play" onclick="~/.config/eww/scripts/music.sh -toggle">{{music_status}}</button>
+                        <button class="btn_next" onclick="~/.config/eww/scripts/music.sh -next">怜</button>
+                        <button class="btn_shuffle" onclick="~/.config/eww/scripts/music.sh -random">{{music_isRepeat}}</button>
+                    </box>
+                </box>  
+            </box> 
+        </def>
+
+        <!-- calendar and date -->
+        <def name="mycalendar">
+            <box class="calendar-box" orientation="v" space-evenly="false">
+                <calendar 
+                    show-day-names="false"
+                    show-heading="true"
+                    valign="center"
+                />
+            </box>
+        </def>
+        <def name="mydate">
+            <box name="date" orientation="v">
+                <label valign="start" halign="center" class="day" text="{{day}}"/>
+                <label valign="center" halign="center" class="month" text="{{month}}"/>
+                <label valign="end" halign="center" class="year" text="{{year}}"/>
+            </box>
+        </def>
+
+        <!-- powermenu -->
+        <def name="logout">
+            <box class="powermenu_box">
+                <button class="btn_logout" onclick="bspc quit"></button>
+            </box>
+        </def>
+        <def name="sleep">
+            <box class="powermenu_box">
+                <button class="btn_sleep" onclick="systemctl suspend">鈴</button>
+            </box>
+        </def>
+        <def name="reboot">
+            <box class="powermenu_box">
+                <button class="btn_reboot" onclick="systemctl reboot">北</button>
+            </box>
+        </def>
+        <def name="poweroff">
+            <box class="powermenu_box">
+                <button class="btn_poweroff" onclick="systemctl poweroff"></button>
+            </box>
+        </def>
+    </definitions>
+
+    <windows>
+        <!-- Put your window blocks here -->
+        <!-- profile -->
+        <window name="profile" stacking="fg" focusable="false" screen="1">
+            <geometry x="1110px" y="33px" width="250px" height="80px"/>
+            <widget>
+                <sidebar/>
+            </widget>
+        </window>
+
+        <!-- weather -->
+        <window name="weather" stacking="fg" focusable="false" screen="1">
+            <geometry x="1025px" y="33px" width="80px" height="80px"/>
+            <widget>
+                <myweather/>
+            </widget>
+        </window>
+
+        <!-- music -->
+        <window name="music" stacking="fg" focusable="false" screen="1">
+            <geometry x="1025px" y="118px" width="335px" height="160px"/>
+            <widget>
+                <music/>
+            </widget>
+        </window>
+
+        <!-- calendar -->
+        <window name="calendar" stacking="fg" focusable="false" screen="1">
+            <geometry x="1025px" y="283px" width="250px" height="160px"/>
+            <widget>
+                <mycalendar/>
+            </widget>
+        </window>
+
+        <!-- date -->
+        <window name="date" stacking="fg" focusable="false" screen="1">
+            <geometry x="1280px" y="283px" width="80px" height="80px"/>
+            <widget>
+                <mydate/>
+            </widget>
+        </window>
+
+        <!-- powermenu -->
+        <window name="poweroff" stacking="fg" focusable="false" screen="1">
+            <geometry x="1025px" y="448px" width="80px" height="80px"/>
+            <widget>
+                <poweroff/>
+            </widget>
+        </window>
+        <window name="reboot" stacking="fg" focusable="false" screen="1">
+            <geometry x="1110px" y="448px" width="80px" height="80px"/>
+            <widget>
+                <reboot/>
+            </widget>
+        </window>
+        <window name="sleep" stacking="fg" focusable="false" screen="1">
+            <geometry x="1195px" y="448px" width="80px" height="80px"/>
+            <widget>
+                <sleep/>
+            </widget>
+        </window>
+        <window name="logout" stacking="fg" focusable="false" screen="1">
+            <geometry x="1280px" y="448px" width="80px" height="80px"/>
+            <widget>
+                <logout/>
+            </widget>
+        </window>
+    </windows>
+</eww>
+
