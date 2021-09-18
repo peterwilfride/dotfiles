@@ -58,7 +58,7 @@ mainbox {
 	children: [ inputbar, listview ];
 }
 
-button { 
+button {
     padding: 5px 2px; 
 }
 
@@ -147,9 +147,11 @@ element alternate.active {
     border-radius:    0px;
 	text-color:       @active-foreground;
 }
+
 element-icon {
 	size: 7ch;
 }
+
 element.selected {
     border-radius:      0px;
 	border:             0 0 0 0px solid;
