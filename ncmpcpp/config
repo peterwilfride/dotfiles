@@ -31,7 +31,8 @@ mpd_port = 6600
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = ~/Musics
+#mpd_music_dir = ~/Musics
+mpd_music_dir = ~/songs
 #
 mpd_crossfade_time = 5
 #

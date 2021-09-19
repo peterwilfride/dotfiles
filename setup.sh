@@ -13,7 +13,8 @@ fi
 
 mkdir $HOME/docs
 mkdir $HOME/vids
-mkdir $HOME/pics/
+mkdir $HOME/pics
+mkdir $HOME/songs
 
 echo "finished."
 echo "coping files ..."
@@ -28,7 +29,6 @@ cp -r bspwm $HOME/.config
 cp -r dunst $HOME/.config
 cp -r eww $HOME/.config
 cp -r kitty $HOME/.config
-cp -r ncmpcpp $HOME/.config
 cp -r polybar $HOME/.config
 cp -r rofi $HOME/.config
 cp -r sxhkd $HOME/.config
@@ -39,3 +39,20 @@ cp .bash_aliases $HOME
 cp .vimrc $HOME
 
 echo "finished."
+echo "configuring mpd"
+
+cp -r mpd $HOME/.config
+
+if [ ! -d $HOME/.mpd ]; then
+  mkdir $HOME/.mpd
+  touch $HOME/database
+  touch $HOME/log
+  touch $HOME/pid
+  touch $HOME/state
+fi
+
+cp -r ncmpcpp $HOME/.config
+
+echo "finished."
+
+echo "Sucessfully completed!"
