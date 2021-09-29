@@ -4,7 +4,7 @@
 
 ### Essentials packages
 ``` 
-xf86-video-intel xorg xorg-xinit bspwm sxhkd feh kitty firefox arandr
+pacman -S xf86-video-intel xorg xorg-xinit bspwm sxhkd feh kitty firefox arandr
 ```
 ### Install yay
 ```
