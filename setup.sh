@@ -13,13 +13,13 @@ fi
 
 mkdir $HOME/docs
 mkdir $HOME/vids
-mkdir $HOME/pics
+mkdir -p $HOME/pics/wallpapers
 mkdir $HOME/songs
 
 echo "finished."
 echo "coping files ..."
 
-#cp -r wallpapers $HOME/pics
+cp teste.jpg $HOME/pics/wallpapers
 
 cp -rf .local/bin/ $HOME/.local
 cp -rf fonts $HOME/.local/share
@@ -42,7 +42,7 @@ cp .vimrc $HOME
 echo "finished."
 echo "configuring mpd"
 
-cp -r mpd $HOME/.config
+cp -rf mpd $HOME/.config
 
 if [ ! -d $HOME/.mpd ]; then
   mkdir $HOME/.mpd
@@ -53,7 +53,7 @@ touch $HOME/.mpd/log
 touch $HOME/.mpd/pid
 touch $HOME/.mpd/state
 
-cp -r ncmpcpp $HOME/.config
+cp -rf ncmpcpp $HOME/.config
 
 echo "finished."
 

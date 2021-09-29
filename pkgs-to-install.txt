@@ -32,6 +32,7 @@ patch
 playerctl
 qt5-base
 ranger
+rofi
 rustup
 screenfetch
 sxiv
