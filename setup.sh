@@ -21,17 +21,17 @@ echo "coping files ..."
 
 #cp -r wallpapers $HOME/pics
 
-cp -r .local/bin/ $HOME/.local
-cp -r fonts $HOME/.local/share
+cp -rf .local/bin/ $HOME/.local
+cp -rf fonts $HOME/.local/share
 fc-cache -f
 
-cp -r bspwm $HOME/.config
-cp -r dunst $HOME/.config
-cp -r eww $HOME/.config
-cp -r kitty $HOME/.config
-cp -r polybar $HOME/.config
-cp -r rofi $HOME/.config
-cp -r sxhkd $HOME/.config
+cp -rf bspwm $HOME/.config
+cp -rf dunst $HOME/.config
+cp -rf eww $HOME/.config
+cp -rf kitty $HOME/.config
+cp -rf polybar $HOME/.config
+cp -rf rofi $HOME/.config
+cp -rf sxhkd $HOME/.config
 
 #cp .xinit $HOME
 cp $HOME/.bashrc $HOME/.bashrc.old
@@ -46,11 +46,12 @@ cp -r mpd $HOME/.config
 
 if [ ! -d $HOME/.mpd ]; then
   mkdir $HOME/.mpd
-  touch $HOME/database
-  touch $HOME/log
-  touch $HOME/pid
-  touch $HOME/state
 fi
+
+touch $HOME/.mpd/database
+touch $HOME/.mpd/log
+touch $HOME/.mpd/pid
+touch $HOME/.mpd/state
 
 cp -r ncmpcpp $HOME/.config
 

@@ -10,14 +10,14 @@ if [[ ! `pidof eww` ]]; then
 fi
 
 run_eww() {
-    ${EWW} open profile
+    ${EWW} open-many profile weather music poweroff reboot sleep logout calendar date
 }
 
 if [[ ! -f "$FILE" ]]; then
     touch "$FILE"
     run_eww
 else
-    ${EWW} close profile
+    ${EWW} close-all
     rm "$FILE"
 fi
 

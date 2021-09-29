@@ -19,5 +19,5 @@ polybar-git picom-ibhagwan-git
 ```
 ### Install other packages
 ```
-cat pkgs.txt | xargs sudo pacman -S
+cat pkgs.txt | xargs sudo pacman -noconfirm -S
 ```
