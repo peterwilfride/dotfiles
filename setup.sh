@@ -19,7 +19,7 @@ mkdir $HOME/songs
 echo "finished."
 echo "coping files ..."
 
-cp -r wallpapers $HOME/pics
+#cp -r wallpapers $HOME/pics
 
 cp -r .local/bin/ $HOME/.local
 cp -r fonts $HOME/.local/share
@@ -33,6 +33,7 @@ cp -r polybar $HOME/.config
 cp -r rofi $HOME/.config
 cp -r sxhkd $HOME/.config
 
+#cp .xinit $HOME
 cp $HOME/.bashrc $HOME/.bashrc.old
 cp .bashrc $HOME
 cp .bash_aliases $HOME
