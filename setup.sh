@@ -7,19 +7,31 @@ if [ ! -d $HOME/.config ]; then
 fi
 
 if [ ! -d $HOME/.local ]; then
-  mkdir -p $HOME/.local/
   mkdir -p $HOME/.local/share/
 fi
 
-mkdir $HOME/docs
-mkdir $HOME/vids
-mkdir -p $HOME/pics/wallpapers
-mkdir $HOME/songs
+if [ ! -d $HOME/docs ]; then
+	mkdir $HOME/docs
+fi
+
+if [ ! -d $HOME/vid ]; then
+	mkdir $HOME/vids
+fi
+
+if [ ! -d $HOME/pics ]; then
+	mkdir -p $HOME/pics/wallpapers
+fi
+
+if [ ! -d $HOME/songs ]; then
+	mkdir $HOME/songs
+fi
 
 echo "finished."
 echo "coping files ..."
 
-cp teste.jpg $HOME/pics/wallpapers
+cp -f teste.jpg $HOME/pics/wallpapers
+
+cp -f songs-test/* $HOME/songs/
 
 cp -rf .local/bin/ $HOME/.local
 cp -rf fonts $HOME/.local/share
